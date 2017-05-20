@@ -1,0 +1,10 @@
+#Sat May 20 18:19:54 KST 2017
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+base.2=C\:\\Users\\Administrator\\Desktop\\201703tv\\cambodia\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\universal-image-loader-1.9.2_fdf9e57b0f5b039edc6ea0e7c8d9b7b7bce522ed
+base.1=C\:\\Users\\Administrator\\Desktop\\201703tv\\cambodia\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\RootTools-3.4_f218eaa812c658335ecb0e3957e9878b8a6c213d
+base.0=C\:\\Users\\Administrator\\Desktop\\201703tv\\cambodia\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\otto-1.3.8_e9db0628aafd4857a0f5165f559642d620bd29bb
+file.2=C\:\\Users\\Administrator\\Desktop\\201703tv\\cambodia\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\universal-image-loader-1.9.2_fdf9e57b0f5b039edc6ea0e7c8d9b7b7bce522ed\\classes.dex
+file.1=C\:\\Users\\Administrator\\Desktop\\201703tv\\cambodia\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\RootTools-3.4_f218eaa812c658335ecb0e3957e9878b8a6c213d\\classes.dex
+file.0=C\:\\Users\\Administrator\\Desktop\\201703tv\\cambodia\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\otto-1.3.8_e9db0628aafd4857a0f5165f559642d620bd29bb\\classes.dex

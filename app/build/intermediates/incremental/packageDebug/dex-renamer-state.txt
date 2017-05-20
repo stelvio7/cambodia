@@ -1,0 +1,7 @@
+#Sat May 20 18:19:56 KST 2017
+base.0=C\:\\Users\\Administrator\\Desktop\\201703tv\\cambodia\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_55dd41f89ebf91b71a699b41b358498f096f40f7
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Users\\Administrator\\Desktop\\201703tv\\cambodia\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_f9e5dc44dd426434824f3e21631ce32d48f52ad4\\classes.dex
+base.1=C\:\\Users\\Administrator\\Desktop\\201703tv\\cambodia\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_f9e5dc44dd426434824f3e21631ce32d48f52ad4
+file.0=C\:\\Users\\Administrator\\Desktop\\201703tv\\cambodia\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_55dd41f89ebf91b71a699b41b358498f096f40f7\\classes.dex
