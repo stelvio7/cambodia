@@ -150,8 +150,8 @@ public class Util {
 	 */ 
 	public static String getMacAddress(Context context){ 
 		SharedPreferences sp = context.getSharedPreferences(Util.getApplicationName(context), Context.MODE_PRIVATE);
-		//return sp.getString("uuid", "");
-		return "00000000-07fd-42f7-ffff-ffff99d603a9";
+		return sp.getString("uuid", "");
+		//return "00000000-07fd-42f7-ffff-ffff99d603a9";
 
 		//return "00000000-4e1d-ffad-9276-b54e0033c587";
 	} 
