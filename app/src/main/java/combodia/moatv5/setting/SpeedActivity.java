@@ -54,6 +54,7 @@ public class SpeedActivity extends Activity {
     private ImageView imgArrow;
     private Button btnSpeedCheck;
     private Button btnSelectServer;
+    private Button btnConfirmServer;
 
     private DownloadTask downloadTask = null;
     private ProgressDialog mProgress;
@@ -65,11 +66,13 @@ public class SpeedActivity extends Activity {
     private ImageView imgNet = null;
     private Context mContext = null;
     private Spinner txtServer = null;
+    private Spinner txtConfirmServer = null;
 
     private TimerTask timerTask;
 
     public String videoUrl = "";
     public int idxServer = 0;
+    public int idxConfirmServer = 0;
     private ArrayList<Server> serverList = new ArrayList<Server>();
     private ArrayList<String> strServerList = new ArrayList<String>();
     private ProgressBar progressBar1;
@@ -114,12 +117,14 @@ public class SpeedActivity extends Activity {
 
         progressBar1 = (ProgressBar) findViewById(R.id.progressBar1);
         txtServer = (Spinner) findViewById(R.id.txtServer);
+        txtConfirmServer = (Spinner) findViewById(R.id.txtConfirmServer);
 
         speedback = (ImageView) findViewById(R.id.speedback);
 
         imgArrow = (ImageView) findViewById(R.id.imgArrow);
         btnSpeedCheck = (Button) findViewById(R.id.btnSpeedCheck);
         btnSelectServer = (Button) findViewById(R.id.btnSelectServer);
+        btnConfirmServer = (Button) findViewById(R.id.btnConfirmServer);
         txtSpeed = (TextView) findViewById(R.id.txtSpeed);
         btnSpeedCheck.requestFocus();
 
@@ -335,6 +340,7 @@ public class SpeedActivity extends Activity {
                 for(int i = 0; i < serverList.size(); i++) {
                     if(serverList.get(i).getCode().equals(String.valueOf(idx))){
                         idxServer = i;
+                        idxConfirmServer = i;
                     }
                 }
 
@@ -354,10 +360,15 @@ public class SpeedActivity extends Activity {
         protected void onPostExecute(Boolean result) {
             // TODO Auto-generated method stub
             if (result) {
+                Log.e(null, "aaaaaaaaaaaaaaaa" + idxServer);
                 if(txtServer != null) {
                     txtServer.setSelected(true);
                     txtServer.setSelection(idxServer);
 
+                }
+                if(txtConfirmServer != null){
+                    txtConfirmServer.setSelected(true);
+                    txtConfirmServer.setSelection(idxServer);
                 }
             }
         }
@@ -437,6 +448,28 @@ public class SpeedActivity extends Activity {
                                                             if(!isfirst) {
                                                                 idxServer = position;
                                                                 Log.d("", "set" + idxServer);
+                                                                //SelectTask downloadTask = new SelectTask(getBaseContext());
+                                                                //downloadTask.execute();
+
+                                                            }
+                                                            //isfirst = false;
+                                                        }
+                                                        @Override
+                                                        public void onNothingSelected(AdapterView<?> parent) {
+
+                                                        }
+                                                    }
+                );
+
+                txtConfirmServer.setAdapter(new ArrayAdapter<String>(SpeedActivity.this, R.layout.spinner_item, strServerList));
+
+
+                txtConfirmServer.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                                        @Override
+                                                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                                            if(!isfirst) {
+                                                                idxConfirmServer = position;
+                                                                Log.d("", "set" + idxConfirmServer);
                                                                 SelectTask downloadTask = new SelectTask(getBaseContext());
                                                                 downloadTask.execute();
 
@@ -454,6 +487,13 @@ public class SpeedActivity extends Activity {
                     GetNowTask getTask = new GetNowTask(getBaseContext());
                     getTask.execute();
                 }
+                btnConfirmServer.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View arg0) {
+                        // TODO Auto-generated method stub
+                        txtConfirmServer.performClick();
+                    }
+                });
 
                 btnSelectServer.setOnClickListener(new OnClickListener() {
                     @Override
@@ -508,8 +548,8 @@ public class SpeedActivity extends Activity {
             String strJson = "";
             PostHttp postmake = new PostHttp();
             ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-            nameValuePairs.add(new BasicNameValuePair("vod_server", serverList.get(idxServer).getCode()));
-            nameValuePairs.add(new BasicNameValuePair("live_server", serverList.get(idxServer).getCode()));
+            nameValuePairs.add(new BasicNameValuePair("vod_server", serverList.get(idxConfirmServer).getCode()));
+            nameValuePairs.add(new BasicNameValuePair("live_server", serverList.get(idxConfirmServer).getCode()));
             nameValuePairs.add(new BasicNameValuePair("id", getMacaddress()));
 
             strJson = postmake.httpConnect(
@@ -532,7 +572,7 @@ public class SpeedActivity extends Activity {
             // TODO Auto-generated method stub
             if (result) {
                 AlertDialog.Builder alt_bld = new AlertDialog.Builder(SpeedActivity.this);
-                alt_bld.setMessage(serverList.get(idxServer).getName() + getString(R.string.serverchanged));
+                alt_bld.setMessage(serverList.get(idxConfirmServer).getName() + getString(R.string.serverchanged));
                 alt_bld.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();

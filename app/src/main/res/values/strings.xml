@@ -6,7 +6,7 @@
  	
  	
     <string name="hello">Hello World, HantvActivity!</string>
-    <string name="app_name">한국TV</string>
+    <string name="app_name">HomeTV</string>
 	<string name="check_recharge">충전 번호를 모두 입력하세요.</string>
 	<string name="check_recharge_complete">충전을 완료하였습니다.</string>
 	<string name="check_recharge_diff">충전 번호가 일치하지 않습니다.</string>

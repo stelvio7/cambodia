@@ -120,10 +120,10 @@
 	<LinearLayout 
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-	    android:gravity="center"
-	     android:orientation="vertical">
+		android:gravity="center"
+	     android:orientation="vertical"
+		android:layout_centerVertical="true"
+		android:layout_centerHorizontal="true">
         <RelativeLayout
 		    android:paddingTop="0dp"
 		    android:layout_width="match_parent"
@@ -226,7 +226,7 @@
 				        android:gravity="center"
 				        android:orientation="horizontal">
 				        <ImageView 
-					        
+					        android:visibility="gone"
 					        android:layout_marginLeft="20dp"
 					        android:layout_width="wrap_content"
 					        android:layout_height="wrap_content"
@@ -239,12 +239,12 @@
 					        android:gravity="center"
 					        android:orientation="horizontal">
 					        <RelativeLayout 
-					            android:layout_width="wrap_content"
-					        	android:layout_height="wrap_content">
+					            android:layout_width="182dp"
+					        	android:layout_height="48dp">
 						        <Spinner
 						            android:id="@+id/txtServer"
 								    android:drawSelectorOnTop="false"
-								    android:layout_marginLeft="16dp"
+								    android:layout_marginLeft="0dp"
 								    android:layout_width="50dp"
 								    android:layout_height="wrap_content"
 								    android:padding="0dp"
@@ -257,20 +257,48 @@
 								</Spinner>
 								 <Button 
 								     android:id="@+id/btnSelectServer"
-							        android:layout_marginLeft="16dp"
-							        android:layout_width="wrap_content"
-							        android:layout_height="wrap_content"
+							        android:layout_marginLeft="0dp"
+							        android:layout_width="182dp"
+							        android:layout_height="48dp"
 							        android:background="@drawable/speed_select"
+									 android:nextFocusRight="@+id/btnSpeedCheck"
 							        android:focusable="true"/>
 							</RelativeLayout>
+
 							<Button
-							    android:id="@+id/btnSpeedCheck"
-							    android:layout_marginLeft="15dp"
-							    android:layout_width="wrap_content"
-							    android:layout_height="wrap_content"
-							    android:background="@drawable/speed_check"
-							    android:focusable="true">
-							</Button>
+								android:id="@+id/btnSpeedCheck"
+								android:layout_width="182dp"
+								android:layout_height="48dp"
+								android:layout_marginLeft="32dp"
+								android:background="@drawable/speed_check"
+								android:nextFocusRight="@+id/btnConfirmServer"
+								android:focusable="true"></Button>
+
+							<RelativeLayout
+								android:layout_width="211dp"
+								android:layout_height="48dp">
+								<Spinner
+									android:id="@+id/txtConfirmServer"
+									android:drawSelectorOnTop="false"
+									android:layout_marginLeft="33dp"
+									android:layout_width="50dp"
+									android:layout_height="wrap_content"
+									android:padding="0dp"
+									android:gravity="center"
+									android:textSize="26sp"
+									android:textColor="#FFFFFF"
+									android:background="@drawable/speed_confirm"
+									android:focusable="false"
+									>
+								</Spinner>
+								<Button
+									android:id="@+id/btnConfirmServer"
+									android:layout_marginLeft="33dp"
+									android:layout_width="182dp"
+									android:layout_height="48dp"
+									android:background="@drawable/speed_confirm"
+									android:focusable="true"/>
+							</RelativeLayout>
 						</LinearLayout>
 				    </LinearLayout>
 				    

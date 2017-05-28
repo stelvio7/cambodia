@@ -61,8 +61,8 @@
         android:paddingRight="22dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal" 
-        >
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
         <ImageView
             android:id="@+id/imgLock"
             android:layout_width="wrap_content"
@@ -82,11 +82,11 @@
         android:id="@+id/mainLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="99dp"
         android:orientation="horizontal" 
         android:visibility="visible"
-        >
+        android:layout_below="@+id/linearLayout2"
+        android:layout_toLeftOf="@+id/linearLayout">
          <LinearLayout
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -479,7 +479,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="4dp"
 		        android:orientation="vertical" android:visibility="gone">
-		        <ImageView
+		        <!--<ImageView
 		            android:id="@+id/btnShopingDigital"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
@@ -489,7 +489,7 @@
 	            	android:nextFocusLeft="@+id/btnMovie"
 		            android:padding="0dp"
 		            android:focusable="true"
-		            android:background="@drawable/shoping_digital_button" />
+		            android:background="@drawable/shoping_digital_button" />-->
 		        <ImageView
 		            android:id="@+id/btnShopingFood"
 		            android:layout_width="wrap_content"
@@ -654,6 +654,7 @@
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:orientation="vertical">
+
 	        <ImageView
 	            android:id="@+id/imageMypageTop"
 	            android:layout_width="wrap_content"
@@ -671,7 +672,7 @@
 	            android:background="@drawable/setting_button"
 	            android:nextFocusRight="@+id/btnLive"
 	            android:nextFocusLeft="@+id/btnMovie"
-	            android:nextFocusDown="@+id/btnSettingHelp"
+	            android:nextFocusDown="@+id/btnShopingDigital"
 	            android:focusable="true"/>
 	        <LinearLayout
 		        android:id="@+id/LayoutSetting"
@@ -679,12 +680,23 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="4dp"
 		        android:orientation="vertical" android:visibility="gone">
+                <ImageView
+                    android:background="@drawable/shoping_digital_button"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/btnShopingDigital"
+                    android:focusable="true"
+                    android:padding="0dp"
+                    android:nextFocusDown="@+id/btnSettingHelp"
+                    android:nextFocusLeft="@+id/btnMovie"
+                    android:nextFocusRight="@+id/btnLive"
+                    android:nextFocusUp="@+id/btnSettingPayment"/>
 	        	 <ImageView
 		            android:id="@+id/btnSettingHelp"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:nextFocusDown="@+id/btnSettingFind"
-		            android:nextFocusUp="@+id/btnSettingPayment"
+		            android:nextFocusUp="@+id/btnShopingDigital"
 		            android:nextFocusRight="@+id/btnLive"
 	            	android:nextFocusLeft="@+id/btnMovie"
 		            android:padding="0dp"
@@ -739,7 +751,7 @@
 		            android:id="@+id/btnSettingPayment"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:nextFocusDown="@+id/btnSettingHelp"
+		            android:nextFocusDown="@+id/btnShopingDigital"
 		            android:nextFocusUp="@+id/btnSpeedCheck"
 		            android:nextFocusRight="@+id/btnLive"
 	            	android:nextFocusLeft="@+id/btnMovie"
